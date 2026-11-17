@@ -27,3 +27,20 @@ export interface SkillSection {
 export type SkillGroup = { title: string } & (
   { items: string[] } | { sections: SkillSection[] }
 )
+
+export interface ProfessionalExperience {
+  company: string
+  role: string
+  dates: string
+  description?: string
+  summary: string
+  contributions: string[]
+  technologies: string[]
+  current?: boolean
+}
+
+export interface EmployerExperience {
+  company: string
+  dates: string
+  roles: ProfessionalExperience[]
+}

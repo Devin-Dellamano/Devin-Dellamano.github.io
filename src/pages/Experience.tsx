@@ -1,26 +1,44 @@
-import { ExperienceEntry } from '../components/ExperienceEntry'
+﻿import { ButtonLink } from '../components/ButtonLink'
+import { CareerTimeline } from '../components/CareerTimeline'
 import { PageIntro } from '../components/PageIntro'
-import { experience } from '../data/portfolio'
+import { careerOverview, employers, experience } from '../data/portfolio'
+import '../styles/experience.css'
 
 export function Experience() {
   return (
-    <div className="container page">
+    <div className="container page career-page">
       <PageIntro label="Professional background" title="Experience">
-        <p>
-          8+ years across software engineering, flight simulation, enterprise
-          development, and production support.
-        </p>
-      </PageIntro>
-      <p className="section-intro">
-        My engineering background includes C++ and C# development,
-        cross-platform software, performance optimization, debugging, CI/CD, and
-        technical leadership through collaboration.
-      </p>
-      <div className="timeline">
-        {experience.map((entry) => (
-          <ExperienceEntry key={entry.company + entry.role} entry={entry} />
+        {careerOverview.introduction.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
         ))}
-      </div>
+      </PageIntro>
+      <dl className="career-overview" aria-label="Career overview">
+        <div>
+          <dt>Years of professional experience</dt>
+          <dd>{careerOverview.professionalExperience}</dd>
+        </div>
+        <div>
+          <dt>Companies</dt>
+          <dd>{employers.length}</dd>
+        </div>
+        <div>
+          <dt>Professional roles</dt>
+          <dd>{experience.length}</dd>
+        </div>
+      </dl>
+      <CareerTimeline employers={employers} />
+      <section className="career-conclusion">
+        <div>
+          <h2>{careerOverview.conclusion.title}</h2>
+          <p>{careerOverview.conclusion.description}</p>
+        </div>
+        <div className="actions">
+          <ButtonLink to="/resumes">View Resumes</ButtonLink>
+          <ButtonLink to="/contact" secondary>
+            Contact
+          </ButtonLink>
+        </div>
+      </section>
     </div>
   )
 }

@@ -1,4 +1,10 @@
-import type { Project, Resume, SkillGroup } from '../types'
+import type {
+  EmployerExperience,
+  ProfessionalExperience,
+  Project,
+  Resume,
+  SkillGroup,
+} from '../types'
 
 export const projects: Project[] = [
   {
@@ -79,45 +85,95 @@ export const projects: Project[] = [
     ],
   },
 ]
-export const experience = [
+export const experience: ProfessionalExperience[] = [
   {
     company: 'Tapestry Solutions',
     role: 'Software Engineer',
     dates: 'August 2026 – Present',
     description:
       'Technical implementation leadership for Java/Cucumber testing integration, repository configuration, and coordination between software and testing teams.',
+    summary:
+      'Software engineering with technical implementation leadership for Java/Cucumber testing integration.',
+    contributions: [
+      'Lead technical implementation of Java/Cucumber testing integration.',
+      'Configure repositories and guide implementation decisions for the testing integration.',
+      'Coordinate implementation work between software and testing teams.',
+    ],
+    technologies: ['Java', 'Cucumber'],
+    current: true,
   },
   {
     company: 'Boeing',
     role: 'Production Support Engineer',
     dates: 'November 2025 – July 2026',
+    summary: 'Engineering focused on production support.',
+    contributions: [],
+    technologies: [],
   },
   {
     company: 'Boeing',
     role: 'Flight Simulation Software Engineer',
     dates: 'May 2022 – November 2025',
+    summary: 'Professional software development for flight simulation systems.',
+    contributions: [],
+    technologies: [],
   },
   {
     company: 'Infosys',
     role: 'Product Reliability Engineer',
     dates: 'September 2021 – May 2022',
+    summary: 'Engineering focused on product reliability.',
+    contributions: [],
+    technologies: [],
   },
   {
     company: 'Infosys',
     role: 'Production Support Analyst',
     dates: 'August 2020 – September 2021',
+    summary: 'Analysis within production support.',
+    contributions: [],
+    technologies: [],
   },
   {
     company: 'Infosys',
     role: 'Technical Analyst',
     dates: 'March 2018 – August 2020',
+    summary: 'Technical analysis within an enterprise software career.',
+    contributions: [],
+    technologies: [],
   },
   {
     company: 'Revature',
     role: 'Full Stack Developer',
     dates: 'January 2018 – March 2018',
+    summary: 'Full stack software development.',
+    contributions: [],
+    technologies: [],
   },
 ]
+
+export const employers: EmployerExperience[] = [
+  { company: 'Tapestry Solutions', dates: 'August 2026 – Present' },
+  { company: 'Boeing', dates: 'May 2022 – July 2026' },
+  { company: 'Infosys', dates: 'March 2018 – May 2022' },
+  { company: 'Revature', dates: 'January 2018 – March 2018' },
+].map((employer) => ({
+  ...employer,
+  roles: experience.filter((entry) => entry.company === employer.company),
+}))
+
+export const careerOverview = {
+  introduction: [
+    'Software engineer with over eight years of professional experience spanning enterprise software development, flight simulation, production support, and product reliability engineering.',
+    'My experience includes developing and maintaining complex software systems, modernizing existing applications, migrating software between operating systems, improving performance, and collaborating across engineering and testing teams to deliver reliable software solutions.',
+  ],
+  professionalExperience: '8+',
+  conclusion: {
+    title: 'Explore my background. Start a conversation.',
+    description:
+      'View my resumes or connect about software engineering opportunities.',
+  },
+}
 export const skills: SkillGroup[] = [
   {
     title: 'Programming & Languages',
