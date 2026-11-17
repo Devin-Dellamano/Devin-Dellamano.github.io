@@ -1,4 +1,4 @@
-﻿import type { Project, Resume } from '../types'
+import type { Project, Resume, SkillGroup } from '../types'
 
 export const projects: Project[] = [
   {
@@ -118,33 +118,71 @@ export const experience = [
     dates: 'January 2018 – March 2018',
   },
 ]
-export const skills = [
-  { title: 'Programming languages', items: ['C++', 'C#', 'Java'] },
+export const skills: SkillGroup[] = [
   {
-    title: 'Gameplay & simulation',
+    title: 'Programming & Languages',
+    sections: [
+      {
+        title: 'Primary Languages',
+        items: ['C++', 'C#', 'Java'],
+      },
+      {
+        title: 'Additional Experience',
+        items: ['Python', 'SQL'],
+      },
+    ],
+  },
+  {
+    title: 'Game Development & Simulation',
     items: [
       'Unity',
-      'Flight simulation',
       'Gameplay systems',
-      'DirectX foundations',
-      'AI & pathfinding',
+      'Flight simulation',
+      'Game UI development',
+      'Mobile game development',
     ],
   },
-  { title: 'Web development', items: ['Full stack development'] },
   {
-    title: 'Development tools & CI/CD',
+    title: 'Web & Enterprise Development',
     items: [
-      'Git',
-      'CI/CD',
-      'Cucumber',
-      'Debugging',
-      'Performance optimization',
-      'Cross-platform software',
+      'Full stack development',
+      'REST APIs',
+      'Angular',
+      'React / Redux (training)',
     ],
   },
   {
-    title: 'AI-assisted development',
-    items: ['OpenAI Codex', 'Requirements-driven iteration'],
+    title: 'Software Engineering',
+    items: [
+      'Cross-platform development',
+      'Windows & Linux development',
+      'Cross-platform software migration',
+      'Software modernization',
+      'Performance optimization',
+      'Debugging and troubleshooting',
+      'Requirements-driven development',
+      'Production Support & Troubleshooting',
+    ],
+  },
+  {
+    title: 'Development Tools & Testing',
+    items: [
+      'Git and version control',
+      'GitLab CI/CD',
+      'Cucumber / Behavior-Driven Development (BDD)',
+      'Test automation',
+      'AI-assisted development (OpenAI Codex)',
+    ],
+  },
+  {
+    title: 'Technical Leadership & Collaboration',
+    items: [
+      'Technical implementation leadership',
+      'Cross-team collaboration',
+      'Repository management',
+      'Technical documentation',
+      'Development coordination',
+    ],
   },
 ]
 export const resumes: Resume[] = [

@@ -369,15 +369,60 @@ nav a.active {
 .experience-entry p:last-child {
   margin-bottom: 0;
 }
+.lifecycle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.lifecycle-card {
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.lifecycle-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  color: var(--accent);
+}
+.lifecycle-number {
+  font-family: Consolas, monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.lifecycle-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+.lifecycle-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+.lifecycle-section + .section {
+  padding-top: 0;
+}
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 35px 50px;
 }
 .skills-grid h3 {
   font-size: 1rem;
   border-top: 2px solid var(--line);
   padding-top: 18px;
+}
+.skill-subgroup + .skill-subgroup {
+  margin-top: 20px;
+}
+.skill-subgroup h4 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 .skill-list {
   list-style: none;
@@ -568,8 +613,9 @@ footer > span {
   .project-grid .project-card:last-child:nth-child(3) {
     grid-column: 1/-1;
   }
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
+  .skills-grid,
+  .lifecycle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .about-grid {
     gap: 35px;
@@ -654,7 +700,9 @@ footer > span {
   .dates {
     margin: 0;
   }
-  .skills-grid {
+  .skills-grid,
+  .lifecycle-grid {
+    grid-template-columns: minmax(0, 1fr);
     gap: 25px;
   }
   .skills-grid h3 {

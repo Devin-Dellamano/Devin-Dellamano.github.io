@@ -18,3 +18,12 @@ export interface Resume {
   description: string
   pdf?: string
 }
+
+export interface SkillSection {
+  title: string
+  items: string[]
+}
+
+export type SkillGroup = { title: string } & (
+  { items: string[] } | { sections: SkillSection[] }
+)
