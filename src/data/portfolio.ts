@@ -1,10 +1,4 @@
-import type {
-  EmployerExperience,
-  ProfessionalExperience,
-  Project,
-  Resume,
-  SkillGroup,
-} from '../types'
+import type { ContactInfo, Project, Resume, SkillGroup } from '../types'
 
 export const projects: Project[] = [
   {
@@ -48,132 +42,22 @@ export const projects: Project[] = [
     slug: 'rune-multiplayer',
     title: 'Rune-Based Multiplayer Game',
     category: 'Current development',
-    status: 'In development',
+    status: 'Playable prototype completed · In active development',
     technologies: ['Unity', 'C#', 'Git', 'OpenAI Codex'],
     overview:
-      'A mobile-first multiplayer combat game in development. The design centers on gesture-based rune casting, spell interactions, resource management, and real-time combat.',
+      'A mobile-first combat game with a completed, playable single-player prototype featuring gesture-based rune drawing and recognition, rune-based spell casting, spell interactions, resource management, and real-time combat. The prototype includes an interactive tutorial and a basic AI opponent. Multiplayer networking is under development and testing.',
     contributions: [
       'Gameplay design, functional requirements, and user experience design.',
       'Development priorities and AI-assisted implementation and iteration using OpenAI Codex.',
+      'Completed a playable single-player prototype with gesture-based rune drawing and recognition, rune-based spell casting, spell interactions, resource management, and real-time combat.',
+      'Implemented an interactive tutorial and single-player combat against a basic AI opponent.',
       'Development and testing of multiplayer networking functionality.',
     ],
-    note: 'Rune casting, spell interactions, resource management, and real-time combat describe the intended design. Completion of those systems has not been confirmed. Multiplayer networking is under development and testing.',
-  },
-  {
-    slug: 'directx-graphics',
-    title: 'DirectX Graphics Programming',
-    category: 'Graphics foundations',
-    status: 'Academic coursework',
-    technologies: ['DirectX'],
-    overview:
-      'Developed a partial graphics engine during Graphics Programming I and II coursework at Full Sail University.',
-    contributions: [
-      'Foundational graphics programming experience through the development of a partial graphics engine.',
-    ],
-  },
-  {
-    slug: 'ai-pathfinding',
-    title: 'Artificial Intelligence & Pathfinding',
-    category: 'Autonomous behavior',
-    status: 'Academic coursework',
-    technologies: [],
-    overview:
-      'Two academic projects exploring artificial intelligence, autonomous agent behavior, and pathfinding.',
-    contributions: [
-      'An autonomous Pac-Man agent designed to navigate without player input while avoiding ghosts.',
-      'A simulated combat robot using AI to compete against robots programmed by other students.',
-    ],
+    note: 'A functional, playable prototype has been completed, featuring gesture-based rune casting, spell interactions, resource management, and real-time combat. The prototype includes an interactive tutorial and single-player combat against a basic AI opponent. Current development is focused on implementing and testing multiplayer functionality.',
   },
 ]
-export const experience: ProfessionalExperience[] = [
-  {
-    company: 'Tapestry Solutions',
-    role: 'Software Engineer',
-    dates: 'August 2026 – Present',
-    description:
-      'Technical implementation leadership for Java/Cucumber testing integration, repository configuration, and coordination between software and testing teams.',
-    summary:
-      'Software engineering with technical implementation leadership for Java/Cucumber testing integration.',
-    contributions: [
-      'Lead technical implementation of Java/Cucumber testing integration.',
-      'Configure repositories and guide implementation decisions for the testing integration.',
-      'Coordinate implementation work between software and testing teams.',
-    ],
-    technologies: ['Java', 'Cucumber'],
-    current: true,
-  },
-  {
-    company: 'Boeing',
-    role: 'Production Support Engineer',
-    dates: 'November 2025 – July 2026',
-    summary: 'Engineering focused on production support.',
-    contributions: [],
-    technologies: [],
-  },
-  {
-    company: 'Boeing',
-    role: 'Flight Simulation Software Engineer',
-    dates: 'May 2022 – November 2025',
-    summary: 'Professional software development for flight simulation systems.',
-    contributions: [],
-    technologies: [],
-  },
-  {
-    company: 'Infosys',
-    role: 'Product Reliability Engineer',
-    dates: 'September 2021 – May 2022',
-    summary: 'Engineering focused on product reliability.',
-    contributions: [],
-    technologies: [],
-  },
-  {
-    company: 'Infosys',
-    role: 'Production Support Analyst',
-    dates: 'August 2020 – September 2021',
-    summary: 'Analysis within production support.',
-    contributions: [],
-    technologies: [],
-  },
-  {
-    company: 'Infosys',
-    role: 'Technical Analyst',
-    dates: 'March 2018 – August 2020',
-    summary: 'Technical analysis within an enterprise software career.',
-    contributions: [],
-    technologies: [],
-  },
-  {
-    company: 'Revature',
-    role: 'Full Stack Developer',
-    dates: 'January 2018 – March 2018',
-    summary: 'Full stack software development.',
-    contributions: [],
-    technologies: [],
-  },
-]
+export { careerOverview, employers, experience } from './experience'
 
-export const employers: EmployerExperience[] = [
-  { company: 'Tapestry Solutions', dates: 'August 2026 – Present' },
-  { company: 'Boeing', dates: 'May 2022 – July 2026' },
-  { company: 'Infosys', dates: 'March 2018 – May 2022' },
-  { company: 'Revature', dates: 'January 2018 – March 2018' },
-].map((employer) => ({
-  ...employer,
-  roles: experience.filter((entry) => entry.company === employer.company),
-}))
-
-export const careerOverview = {
-  introduction: [
-    'Software engineer with over eight years of professional experience spanning enterprise software development, flight simulation, production support, and product reliability engineering.',
-    'My experience includes developing and maintaining complex software systems, modernizing existing applications, migrating software between operating systems, improving performance, and collaborating across engineering and testing teams to deliver reliable software solutions.',
-  ],
-  professionalExperience: '8+',
-  conclusion: {
-    title: 'Explore my background. Start a conversation.',
-    description:
-      'View my resumes or connect about software engineering opportunities.',
-  },
-}
 export const skills: SkillGroup[] = [
   {
     title: 'Programming & Languages',
@@ -243,22 +127,54 @@ export const skills: SkillGroup[] = [
 ]
 export const resumes: Resume[] = [
   {
-    title: 'Software Engineering Resume',
+    id: 'software-engineering',
+    icon: 'code',
+    title: 'Software Engineering',
     description:
-      'Professional software engineering, flight simulation, enterprise development, and technical implementation leadership.',
+      'Focused on professional software development, technical leadership, legacy modernization, and enterprise engineering.',
+    qualifications: [
+      'C++, C#, and Java',
+      'Technical implementation leadership',
+      'Cross-platform development',
+      'Software modernization and CI/CD',
+      'Enterprise software engineering',
+    ],
+    filename: 'Devin_Dellamano_Software_Engineering_Resume.pdf',
+    format: 'PDF',
+    pageCount: 2,
+    lastUpdated: '2026-11',
   },
   {
-    title: 'Game Development Resume',
+    id: 'game-development',
+    icon: 'gamepad',
+    title: 'Game Development',
     description:
-      'Gameplay systems, Unity and C#, independent publishing, and game development education.',
+      'Focused on real-time simulation, gameplay programming, interactive systems, and independent game development.',
+    qualifications: [
+      'C++, C#, and Unity',
+      '3.5 years of real-time simulation',
+      'Gameplay and combat systems',
+      'Android game development',
+      'Independent game publishing',
+    ],
+    filename: 'Devin_Dellamano_Game_Development_Resume.pdf',
+    format: 'PDF',
+    pageCount: 2,
+    lastUpdated: '2026-11',
   },
 ]
-export const contact: {
-  email?: string
-  linkedin?: string
-  github: string
-  githubConfirmed: boolean
-} = {
-  github: 'https://github.com/devin-dellamano',
-  githubConfirmed: false,
+export const contact: ContactInfo = {
+  email: 'dellamanodevin@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/devin-dellamano-732545114/',
+  location: {
+    primary: 'Greater St. Louis Metropolitan Area',
+    secondary: 'Illinois, United States',
+  },
+  interests: [
+    'Software Engineering',
+    'Technical Leadership',
+    'Real-Time Simulation',
+    'Game Development',
+    'Software Modernization',
+  ],
 }

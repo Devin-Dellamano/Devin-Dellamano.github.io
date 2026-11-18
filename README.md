@@ -29,13 +29,13 @@ PowerShell with script restrictions can use `npm.cmd` instead of `npm`. Producti
 
 Add a project with a unique slug to the typed projects array. Optional `screenshots` takes source and descriptive alt text. `videos` takes video URLs and titles. `buildUrl` and `repositoryUrl` render when supplied. Add only actual project media.
 
-Place PDFs in `public/resumes/` and set each resume's `pdf`, such as `/resumes/software-engineering.pdf`. View and download controls appear automatically.
+Place PDFs in `public/resumes/` and set each resume's `filename` in `src/data/portfolio.ts`. Keep `qualifications`, `pageCount`, and the fixed `lastUpdated` month (`YYYY-MM`) current when replacing a document. `ResumeCard` builds view and download URLs using Vite's `BASE_URL`, supporting root and repository-subdirectory hosting.
 
-Set `contact.email` and `contact.linkedin` when confirmed. The supplied GitHub URL is configured and hidden until `githubConfirmed` becomes `true`.
+Maintain the professional email, LinkedIn URL, general location, and professional interests in the typed `contact` configuration in `src/data/portfolio.ts`. Contact cards reuse these values. Copy Email announces successful copies and provides manual-copy guidance when clipboard access is unavailable or denied.
 
 ## Pending content and review
 
-Actual screenshots, gameplay videos, playable builds, resume PDFs, email, and LinkedIn await supplied assets or confirmed information. GitHub also awaits confirmation. Rune-game design goals are identified separately from confirmed development activity. Employer-specific accomplishments are limited to supplied details.
+Actual screenshots, gameplay videos, and playable builds await supplied assets or confirmed information. Rune-game design goals are identified separately from confirmed development activity. Employer-specific accomplishments are limited to supplied details.
 
 Review keyboard navigation, mobile Menu and Escape handling, project detail routes, and both themes before publication. System theme is used on the first visit, with manual selection persisted when storage is available. No commit, push, or deployment was performed.
 

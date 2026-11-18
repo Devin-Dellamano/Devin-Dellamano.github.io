@@ -1,7 +1,8 @@
-﻿import { ButtonLink } from '../components/ButtonLink'
+import { ButtonLink } from '../components/ButtonLink'
+import { EmployerNavigation } from '../components/EmployerNavigation'
 import { CareerTimeline } from '../components/CareerTimeline'
 import { PageIntro } from '../components/PageIntro'
-import { careerOverview, employers, experience } from '../data/portfolio'
+import { careerOverview, employers } from '../data/experience'
 import '../styles/experience.css'
 
 export function Experience() {
@@ -13,19 +14,14 @@ export function Experience() {
         ))}
       </PageIntro>
       <dl className="career-overview" aria-label="Career overview">
-        <div>
-          <dt>Years of professional experience</dt>
-          <dd>{careerOverview.professionalExperience}</dd>
-        </div>
-        <div>
-          <dt>Companies</dt>
-          <dd>{employers.length}</dd>
-        </div>
-        <div>
-          <dt>Professional roles</dt>
-          <dd>{experience.length}</dd>
-        </div>
+        {careerOverview.highlights.map((highlight) => (
+          <div key={highlight.label}>
+            <dt>{highlight.label}</dt>
+            <dd>{highlight.value}</dd>
+          </div>
+        ))}
       </dl>
+      <EmployerNavigation employers={employers} />
       <CareerTimeline employers={employers} />
       <section className="career-conclusion">
         <div>
