@@ -1,0 +1,10 @@
+# Use LF for text files on every platform.
+* text=auto eol=lf
+
+# Windows batch scripts use CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Preserve binary assets byte for byte.
+*.pdf binary -eol
+*.png binary -eol
