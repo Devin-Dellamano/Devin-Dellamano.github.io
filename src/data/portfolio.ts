@@ -165,7 +165,7 @@ export const resumes: Resume[] = [
 ]
 export const contact: ContactInfo = {
   email: 'dellamanodevin@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/devin-dellamano-732545114/',
+  linkedin: 'https://www.linkedin.com/in/devin-dellamano/',
   location: {
     primary: 'Greater St. Louis Metropolitan Area',
     secondary: 'Illinois, United States',
